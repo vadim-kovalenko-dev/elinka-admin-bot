@@ -1,0 +1,8 @@
+# Игнорируем ненужные файлы в Docker-образе
+.env
+.git
+.gitignore
+.dockerignore
+__pycache__
+*.db
+*.sqlite
