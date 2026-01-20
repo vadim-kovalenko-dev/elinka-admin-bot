@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: elinka-admin-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DB_PATH=/app/bot_data/responses.db
+    volumes:
+      - ./bot_data:/app/bot_data
+    networks:
+      - elinka-network
+
+networks:
+  elinka-network:
+    driver: bridge
